@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Semua menu Bakso Dhimas — bakso, mie ayam, camilan, dan minuman segar. Pesan sekarang via WhatsApp!"
+    />
+    <title>Menu — Bakso Dhimas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+    <!-- ========================================================
+         NAVBAR
+         ======================================================== -->
+    <nav class="navbar sticky-top" aria-label="Navigasi utama">
+      <div class="container navbar__container">
+        <a class="navbar-brand" href="index.html">
+          <span class="brand-icon" aria-hidden="true"><i class="bi bi-shop"></i></span>
+          Bakso <span>Dhimas</span>
+        </a>
+        <ul class="navbar__desktop-nav">
+          <li><a class="nav-link" href="index.html" data-page="index.html">Beranda</a></li>
+          <li><a class="nav-link" href="menu.html" data-page="menu.html">Menu</a></li>
+          <li><a class="nav-link" href="index.html#tentang">Tentang Kami</a></li>
+          <li><a class="nav-link" href="index.html#kontak">Kontak</a></li>
+          <li>
+            <a class="btn btn-wa btn-sm px-3" href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-whatsapp me-1"></i>Pesan Sekarang
+            </a>
+          </li>
+        </ul>
+        <button class="navbar__hamburger" id="navHamburger" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="sideDrawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+<div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+
+    <aside class="side-drawer" id="sideDrawer" role="dialog" aria-modal="true" aria-label="Menu navigasi">
+      <!-- Header merah -->
+      <div class="side-drawer__header">
+        <span class="side-drawer__title">Menu Navigasi</span>
+        <button class="side-drawer__close" id="drawerClose" aria-label="Tutup menu navigasi">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <!-- Brand section -->
+      <div class="side-drawer__brand">
+        <div class="side-drawer__brand-icon">
+          <i class="bi bi-shop"></i>
+        </div>
+        <div>
+          <div class="side-drawer__brand-name">Bakso <span>Dhimas</span></div>
+          <div class="side-drawer__brand-tagline">100% Daging Sapi Segar</div>
+        </div>
+      </div>
+
+      <!-- Nav items -->
+      <nav class="side-drawer__nav">
+        <a class="side-drawer__item" href="index.html" data-page="index.html">
+          <span class="side-drawer__icon"><i class="bi bi-house-fill"></i></span>
+          <span>Beranda</span>
+        </a>
+        <a class="side-drawer__item" href="menu.html" data-page="menu.html">
+          <span class="side-drawer__icon"><i class="bi bi-grid-fill"></i></span>
+          <span>Menu</span>
+        </a>
+        <a class="side-drawer__item" href="index.html#tentang">
+          <span class="side-drawer__icon"><i class="bi bi-info-circle-fill"></i></span>
+          <span>Tentang Kami</span>
+        </a>
+        <a class="side-drawer__item" href="index.html#kontak">
+          <span class="side-drawer__icon"><i class="bi bi-geo-alt-fill"></i></span>
+          <span>Kontak</span>
+        </a>
+      </nav>
+
+      <!-- Divider -->
+      <div class="side-drawer__divider">
+        <span>Hubungi Kami</span>
+      </div>
+
+      <!-- Footer -->
+      <div class="side-drawer__footer">
+        <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="side-drawer__wa">
+          <i class="bi bi-whatsapp"></i>
+          <span>Pesan via WhatsApp</span>
+        </a>
+        <div class="side-drawer__info">
+          <i class="bi bi-clock"></i>Buka 09:00 &ndash; 21:00 WIB
+        </div>
+        <div class="side-drawer__info">
+          <i class="bi bi-truck ongkir-icon"></i>Gratis Ongkir Bandar Lampung
+        </div>
+      </div>
+    </aside>
+
+    <!-- ========================================================
+         PAGE HEADER
+         ======================================================== -->
+    <header class="page-header" aria-label="Menu Bakso Dhimas">
+      <div class="container text-center">
+        <h1 class="page-header__title">Menu Kami</h1>
+        <p class="page-header__subtitle">
+          Temukan bakso, mie ayam, camilan, dan minuman segar pilihan kami.
+        </p>
+      </div>
+    </header>
+
+    <!-- ========================================================
+         FILTER & SEARCH
+         ======================================================== -->
+    <div class="filter-section" aria-label="Filter menu">
+      <div class="container">
+        <!-- Baris 1: Filter chips (horizontal scroll) + Search inline -->
+        <div class="filter-row">
+          <!-- Filter chips -->
+          <div
+            id="categoryFilter"
+            class="filter-chips"
+            role="group"
+            aria-label="Filter kategori"
+          >
+            <!-- Render by menu.js -->
+          </div>
+
+          <!-- Search -->
+          <div class="search-box">
+            <i class="bi bi-search"></i>
+            <input
+              type="search"
+              id="menuSearch"
+              placeholder="Cari menu..."
+              aria-label="Cari menu"
+            />
+          </div>
+        </div><!-- /filter-row -->
+      </div>
+    </div>
+
+    <!-- ========================================================
+         MENU GRID
+         ======================================================== -->
+    <main class="section" id="main-content" aria-label="Daftar menu">
+      <div class="container">
+        <div
+          class="row g-4"
+          id="menuGrid"
+          aria-live="polite"
+          aria-label="Grid menu"
+        >
+          <!-- Render by menu.js -->
+        </div>
+      </div>
+    </main>
+
+    <!-- ========================================================
+         FOOTER
+         ======================================================== -->
+    <footer class="footer" id="kontak" aria-label="Footer">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Kolom 1: Brand & Deskripsi -->
+          <div class="col-12 col-md-4">
+            <div class="footer__brand">
+              Bakso <span>Dhimas</span>
+            </div>
+            <p class="footer__desc">
+              Warung bakso dengan cita rasa rumahan yang autentik. Dibuat dari
+              daging sapi segar pilihan tanpa pengawet. Buka setiap hari mulai
+              pukul 09:00 – 21:00 WIB.
+            </p>
+            <div class="footer__social mt-3">
+              <a href="#" aria-label="Instagram Bakso Dhimas"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="TikTok Bakso Dhimas"><i class="bi bi-tiktok"></i></a>
+              <a href="#" aria-label="Facebook Bakso Dhimas"><i class="bi bi-facebook"></i></a>
+              <a
+                href="https://wa.me/6281234567890"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp Bakso Dhimas"
+              ><i class="bi bi-whatsapp"></i></a>
+            </div>
+          </div>
+
+          <!-- Kolom 2: Navigasi -->
+          <div class="col-12 col-md-4">
+            <div class="footer__heading">Navigasi</div>
+            <nav aria-label="Footer navigation">
+              <a href="index.html" class="footer__link">
+                <i class="bi bi-house me-2"></i>Beranda
+              </a>
+              <a href="menu.html" class="footer__link">
+                <i class="bi bi-grid me-2"></i>Menu
+              </a>
+              <a href="#tentang" class="footer__link">
+                <i class="bi bi-info-circle me-2"></i>Tentang Kami
+              </a>
+              <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="footer__link">
+                <i class="bi bi-whatsapp me-2"></i>Pesan via WhatsApp
+              </a>
+            </nav>
+
+            <div class="footer__heading mt-4">Jam Operasional</div>
+            <p style="font-size:0.88rem; color:rgba(255,255,255,0.6);">
+              <i class="bi bi-clock me-2" style="color:var(--secondary);"></i>
+              Setiap Hari: 09:00 – 21:00 WIB
+            </p>
+            <p style="font-size:0.88rem; color:rgba(255,255,255,0.6);">
+              <i class="bi bi-telephone me-2" style="color:var(--secondary);"></i>
+              0812-3456-7890
+            </p>
+          </div>
+
+          <!-- Kolom 3: Google Maps -->
+          <div class="col-12 col-md-4">
+            <div class="footer__heading">Lokasi Kami</div>
+            <div class="footer__map mb-3">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322821!2d106.82185!3d-6.208763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTInMzEuNSJTIDEwNsKwNDknMTguNiJF!5e0!3m2!1sid!2sid!4v1234567890"
+                width="100%"
+                height="180"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Lokasi Bakso Dhimas"
+              ></iframe>
+            </div>
+            <address style="font-style:normal; font-size:0.88rem; color:rgba(255,255,255,0.6);">
+              <i class="bi bi-geo-alt me-2" style="color:var(--secondary);"></i>
+              Jl. Contoh No. 12, Kec. Menteng, Jakarta Pusat, DKI Jakarta 10310
+            </address>
+          </div>
+        </div>
+
+        <!-- Footer bottom -->
+        <div class="footer__bottom">
+          <p class="mb-0">
+            &copy; 2025 Bakso Dhimas. Dibuat dengan <i class="bi bi-heart-fill text-danger"></i>
+            untuk para pecinta bakso.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a
+      id="floatingWA"
+      class="floating-wa"
+      href="#"
+      aria-label="Hubungi Bakso Dhimas via WhatsApp"
+      role="button"
+    >
+      <i class="bi bi-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/menu.js"></script>
+  </body>
+</html>
